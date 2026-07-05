@@ -3,24 +3,78 @@
 <head>
 <meta charset="utf-8">
 <style>
-  @font-face { font-family: "Inter"; font-weight: 400 500; src: url("../fonts/Inter-latin.woff2") format("woff2"); }
-  * { margin: 0; padding: 0; }
-  body { width: 1584px; height: 396px; background: #161613; font-family: "Inter", -apple-system, sans-serif; position: relative; overflow: hidden; }
-  svg.streams { position: absolute; inset: 0; }
-  .tag { position: absolute; right: 110px; bottom: 70px; font-size: 30px; font-weight: 400; color: #A8A8A1; text-align: right; }
+  /* 1584 × 396 — LinkedIn banner. Name omitted on purpose: LinkedIn overlays
+     the profile block on the left, so the lockup sits right. */
+  @font-face {
+    font-family: "Instrument Serif";
+    src: url("../fonts/InstrumentSerif-latin.woff2") format("woff2");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Instrument Serif";
+    src: url("../fonts/InstrumentSerif-italic-latin.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url("../fonts/JetBrainsMono-latin.woff2") format("woff2");
+    font-weight: 100 800;
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1584px; height: 396px; }
+  body {
+    background: #1C1B1A;
+    color: #FCFBF9;
+    font-family: "Instrument Serif", Georgia, serif;
+    position: relative;
+  }
+  .lockup {
+    position: absolute;
+    right: 110px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 56px;
+  }
+  .quote {
+    font-style: italic;
+    font-size: 44px;
+    color: rgba(252, 251, 249, 0.85);
+    text-align: right;
+  }
+  .mono {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(252, 251, 249, 0.55);
+    text-align: right;
+    margin-top: 16px;
+  }
+  .monogram {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 40px;
+    line-height: 1;
+  }
+  .monogram .rule {
+    width: 84px;
+    height: 3px;
+    background: #7B3550;
+    margin: 11px 0;
+  }
 </style>
 </head>
 <body>
-<svg class="streams" width="1584" height="396" viewBox="0 0 1584 396" xmlns="http://www.w3.org/2000/svg">
-  <g fill="none" stroke="#EBEAE5" stroke-width="1.5">
-    <path d="M-20,50 C360,60 760,115 1610,130" opacity="0.07"/>
-    <path d="M-20,110 C400,108 800,122 1610,132" opacity="0.09"/>
-    <path d="M-20,170 C380,172 780,138 1610,134" opacity="0.08"/>
-    <path d="M-20,230 C420,222 820,145 1610,136" opacity="0.10"/>
-    <path d="M-20,290 C400,284 800,152 1610,138" opacity="0.07"/>
-    <path d="M-20,350 C440,346 840,158 1610,140" opacity="0.05"/>
-  </g>
-</svg>
-<p class="tag">I turn product potential into traction and traction into scale.</p>
+  <div class="lockup">
+    <div>
+      <p class="quote">"Evidence over empty words."</p>
+      <p class="mono">Product Leader&ensp;·&ensp;Deep Tech at Scale&ensp;·&ensp;AI-Native</p>
+    </div>
+    <div class="monogram"><span>A</span><span class="rule"></span><span>T</span></div>
+  </div>
 </body>
 </html>

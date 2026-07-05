@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  /* 180 × 180 — apple-touch-icon. Paper field, stacked monogram. */
+  @font-face {
+    font-family: "Instrument Serif";
+    src: url("../fonts/InstrumentSerif-latin.woff2") format("woff2");
+    font-weight: 400;
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 180px; height: 180px; }
+  body {
+    background: #FCFBF9;
+    color: #1C1B1A;
+    font-family: "Instrument Serif", Georgia, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .monogram {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 58px;
+    line-height: 1;
+  }
+  .monogram .rule {
+    width: 118px;
+    height: 5px;
+    background: #7B3550;
+    margin: 13px 0;
+  }
+</style>
+</head>
+<body>
+  <div class="monogram"><span>A</span><span class="rule"></span><span>T</span></div>
+</body>
+</html>

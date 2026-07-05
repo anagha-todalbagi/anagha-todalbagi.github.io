@@ -1,68 +1,44 @@
-# Design System v3.1 — anaghatodalbagi.com
+# Design System — Axiom, as implemented on the site
 
-Subordinate to [BRAND.md](BRAND.md): the arrow (→) is the brand device, `a→t` the monogram, converging streamlines the one motion. Changes from v3: hero mist becomes convergence (paths gather into a single resolving line); work-row proof links are written as arrows ("private preview → GA+"); favicon/OG/banner derive from the ink surface + static streamline frame; print stylesheet renders the page as a one-page resume.
+Subordinate to [BRAND.md](BRAND.md) and [brand-guide.html](brand-guide.html). This documents how the guide's tokens map onto `styles.css`.
 
-Direction distilled from the actual references (viewed, not summarized):
-- **logartis.info** — one full-screen atmospheric monochrome scene, name in light type, one button. A single immersive visual carries everything.
-- **vanschneider.com** — black-and-white imagery, one mark, zero chrome.
-- **ambrosino.io** — a warm-gray void, a name, and a sparse ledger of companies/roles/years. ~80% negative space.
-
-**The rules they share: monochrome. One idea per screen. Massive negative space. Quiet type. Proof, not decoration.**
-
-## 1. Palette — monochrome, warm
+## 1. Color — warm neutrals + one accent
 
 | Token | Value | Use |
 |---|---|---|
-| `--paper` | `#EBEAE5` | Page background (ambrosino warm gray) |
-| `--ink` | `#161613` | Text, the only "color" |
-| `--gray` | `#6E6E68` | Secondary text, dates, tags (AA on paper) |
-| `--faint` | `#9C9C95` | Hairline-adjacent labels, ≥13px only |
-| `--line` | `#D8D7D0` | Hairline rules |
+| `--paper` | `#FCFBF9` | Primary background |
+| `--ink` | `#1C1B1A` | Text; footer surface (statement moment) |
+| `--fog` | `#96938C` | Secondary text, mono labels, small meta |
+| `--greige` | `#E2E0D9` | Hairline rules, panels, soft fills |
+| `--mulberry` | `#7B3550` | Signature accent, ≤ 10% of any view |
 
-No accent color. Hierarchy comes from size, weight, and space. Links are ink with a hairline underline; hover darkens the underline. **All imagery is rendered grayscale** (CSS `filter: grayscale(1)` with gentle contrast) so photos and video stills sit inside the monochrome world; color returns only when a video actually plays.
+Usage ratio from the guide: paper 64 · ink 26 · accent 10. Mulberry appears only as: the monogram rule, section numbers, step numbers, stat numerals, link-hover underlines, the Beyond blockquote rule, and selection highlight. Never long body copy (it clears AA only for large/UI text). Graphite on paper clears AAA.
 
-## 2. The one visual (hero)
+## 2. Typography — serif · sans · mono
 
-A single, barely-there atmospheric animation behind the name — thin monochrome streamlines drifting across the paper like mist (logartis atmosphere, but abstract: her real-time data domain rendered as weather, not as a dashboard). Ink at 4–7% opacity, canvas-drawn, ≤ 120 paths, paused off-screen, static frame under `prefers-reduced-motion`. It should be felt more than noticed. Nothing else on the page moves except reveals.
+Self-hosted latin subsets in `assets/fonts/` (Google Fonts woff2, ~96 KB total).
 
-## 3. Typography
-
-One family: **Inter** (variable, self-hosted) with system fallback. Two weights only: 400 and 500.
-
-| Role | Size | Weight |
+| Role | Face | Where |
 |---|---|---|
-| Name | clamp(3rem, 9vw, 6.5rem), −0.03em | 500 |
-| Tagline | clamp(1.125rem, 2vw, 1.5rem) | 400, `--gray` |
-| Section label | 0.8125rem, +0.08em, uppercase | 500, `--faint` |
-| Entry title (company / work) | clamp(1.375rem, 2.5vw, 2rem), −0.02em | 500 |
-| Body | 1rem / 1.65, max 58ch | 400 |
-| Meta (dates, tags, stacks) | 0.8125rem, tabular numerals | 400, `--gray` |
+| Display | Instrument Serif 400 (+ italic) | Name, section-entry titles, stats, quotes |
+| Text | Manrope 400–600 (variable) | Body, UI, captions — line-height 1.7 |
+| Evidence | JetBrains Mono | Kickers, dates, stages, proof links, colophon — small, uppercase, +0.14em |
 
-Prose budget: the entire site under 300 words. No sentence a skimmer must read twice.
+Scale: H1 `clamp(3.25rem, 8.5vw, 6rem)` · lede `clamp(1.375rem, 2.6vw, 1.75rem)` · entry titles `~1.5–2rem` · body `0.9375rem` · mono labels `0.625–0.6875rem`.
 
-## 4. Space & layout
+## 3. Structure — the site reads as a numbered document
 
-- One column. `max-width: 720px` for text, media may extend to 960px. Left-aligned (ambrosino), not centered.
-- Section gap: `clamp(112px, 16vh, 200px)`. Within-section rhythm: 8px base scale.
-- No cards, no borders around content, no chips except stage tags (plain small-caps text, no outline). Hairline rules only where a table needs them.
-- Nav: none beyond a fixed, tiny top-right "Contact" link and the name top-left after scroll. The page is short enough to scroll.
+Every section opens with a guide-style header row: mono kicker left (`01 — HOW I WORK`, the number in mulberry), quiet right-aligned mono note, hairline underneath. The page is the flagship application of the same system as the brand guide — same furniture, same numbering.
 
-## 5. Components (six, total)
+Components: hero lockup (monogram → kicker → name → lede → links → stat strip) · four-step loop (numbered: it is a sequence) · work ledger rows (kicker / serif title / one line / mono proof link) · career ledger (serif company, mono years + stage; exact months live in `title` attrs and JSON-LD) · alumni text row (no logos — the system is typographic) · grayscale click-to-play stills (the only imagery; color returns on play) · fact list · graphite footer with reversed monogram and colophon.
 
-1. **Hero** — mist canvas, name, one tagline line, two quiet links (email, LinkedIn).
-2. **Work row** — for impact: title (what shipped), one line (what it means), proof link. Separated by hairlines, ledger-style.
-3. **Career ledger** — company (entry title size) · role · years · stage in small caps (`SEED · 5TH ENG HIRE`). One line of detail + stack in meta gray. No logos, no nodes — the names carry weight on their own.
-4. **Still row** — talks: two grayscale video stills (real GopherCon frames), click-to-play facade (iframe on demand, color on play). Small ledger of remaining venues/links beneath.
-5. **Fact line** — single-line entries for TEDx, mentoring, Jagriti, publication, book club.
-6. **Footer** — "Say hello." + email + LinkedIn, one warm sentence.
+## 4. Motion — one orchestrated moment
 
-## 6. Motion
+- On load: hero elements rise in sequence (500ms, 60–100ms stagger) and the monogram's mulberry rule draws in left → right. That is the signature; nothing else animates ambiently.
+- On scroll: single-fire reveals (opacity + 10px rise, 500ms).
+- Hover: underline color shifts only, 150ms. Nothing lifts, tilts, or counts up.
+- `prefers-reduced-motion`: everything static. `?flat` query param: same, for QA screenshots. JS off: all content visible.
 
-- Hero mist: the only ambient motion.
-- Reveals: opacity 0→1, rise 10px, 500ms, once, no stagger theatrics.
-- Hover: underline/opacity shifts, 150ms. Nothing lifts, tilts, or counts up.
-- `prefers-reduced-motion`: static mist frame, instant reveals. JS-off: everything visible.
+## 5. Print
 
-## 7. Voice
-
-Unchanged and stricter: evidence over assertion, every claim resolves to a link/number/date/name. Banned: proven, passionate, innovative, visionary. The design's restraint is itself the credibility signal — a person with this record doesn't need to raise her voice.
+`⌘P` renders the page as a short resume: monogram/stats/stills hidden, link URLs expanded inline, ink on white.

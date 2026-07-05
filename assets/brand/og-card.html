@@ -3,32 +3,72 @@
 <head>
 <meta charset="utf-8">
 <style>
-  @font-face { font-family: "Inter"; font-weight: 400 500; src: url("../fonts/Inter-latin.woff2") format("woff2"); }
-  * { margin: 0; padding: 0; }
-  body { width: 1200px; height: 630px; background: #161613; font-family: "Inter", -apple-system, sans-serif; position: relative; overflow: hidden; }
-  svg.streams { position: absolute; inset: 0; }
-  .content { position: absolute; left: 96px; bottom: 96px; }
-  h1 { font-size: 76px; font-weight: 500; letter-spacing: -0.03em; color: #EBEAE5; line-height: 1.02; }
-  p.tag { font-size: 30px; font-weight: 400; color: #A8A8A1; margin-top: 18px; }
-  .mark { position: absolute; right: 96px; bottom: 96px; font-size: 30px; font-weight: 400; color: #6E6E68; }
+  /* 1200 × 630 — link-share card. Axiom System: ink surface, reversed lockup. */
+  @font-face {
+    font-family: "Instrument Serif";
+    src: url("../fonts/InstrumentSerif-latin.woff2") format("woff2");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url("../fonts/JetBrainsMono-latin.woff2") format("woff2");
+    font-weight: 100 800;
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    background: #1C1B1A;
+    color: #FCFBF9;
+    font-family: "Instrument Serif", Georgia, serif;
+    position: relative;
+    padding: 64px 72px;
+  }
+  .mono {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 15px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .monogram {
+    position: absolute;
+    top: 64px;
+    left: 72px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 44px;
+    line-height: 1;
+  }
+  .monogram .rule {
+    width: 92px;
+    height: 3px;
+    background: #7B3550;
+    margin: 12px 0;
+  }
+  .est {
+    position: absolute;
+    top: 72px;
+    right: 72px;
+    color: rgba(252, 251, 249, 0.55);
+  }
+  .lockup { position: absolute; left: 72px; bottom: 88px; }
+  .name {
+    font-size: 96px;
+    line-height: 1.05;
+    letter-spacing: 0;
+  }
+  .subline {
+    margin-top: 26px;
+    color: rgba(252, 251, 249, 0.72);
+  }
 </style>
 </head>
 <body>
-<svg class="streams" width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
-  <g fill="none" stroke="#EBEAE5" stroke-width="1.5">
-    <path d="M-20,80 C260,95 560,180 1230,208" opacity="0.07"/>
-    <path d="M-20,150 C300,150 620,195 1230,211" opacity="0.09"/>
-    <path d="M-20,225 C280,228 600,210 1230,213" opacity="0.08"/>
-    <path d="M-20,300 C320,290 640,225 1230,215" opacity="0.10"/>
-    <path d="M-20,380 C300,370 620,240 1230,217" opacity="0.07"/>
-    <path d="M-20,460 C340,455 660,250 1230,219" opacity="0.05"/>
-    <path d="M-20,540 C320,540 680,260 1230,221" opacity="0.04"/>
-  </g>
-</svg>
-<div class="content">
-  <h1>Anagha Todalbagi</h1>
-  <p class="tag">I turn product potential into traction and traction into scale.</p>
-</div>
-<p class="mark">a&#8594;t</p>
+  <div class="monogram"><span>A</span><span class="rule"></span><span>T</span></div>
+  <p class="mono est">San Francisco</p>
+  <div class="lockup">
+    <p class="name">Anagha Todalbagi</p>
+    <p class="mono subline">Product Leader&ensp;·&ensp;Deep Tech at Scale&ensp;·&ensp;AI-Native</p>
+  </div>
 </body>
 </html>
