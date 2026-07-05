@@ -106,6 +106,9 @@ a:focus-visible {
 }
 
 /* ---------- Contact pin ---------- */
+/* Hidden over the hero, revealed once the hero scrolls out of view
+   (JS toggles .past-hero on <html>). No-JS keeps it hidden; the footer
+   is the fallback contact surface. */
 
 .contact-pin {
   position: fixed;
@@ -118,8 +121,20 @@ a:focus-visible {
   text-transform: uppercase;
   color: var(--fog);
   text-decoration-color: transparent;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 300ms ease-out, transform 300ms ease-out, color 150ms ease-out;
+}
+.past-hero .contact-pin {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
 }
 .contact-pin:hover { color: var(--ink); text-decoration-color: var(--mulberry); }
+@media (prefers-reduced-motion: reduce) {
+  .contact-pin { transition: none; transform: none; }
+}
 
 /* ---------- Hero ---------- */
 

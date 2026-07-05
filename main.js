@@ -23,6 +23,17 @@
     revealed.forEach(function (el) { el.classList.add("in"); });
   }
 
+  /* ---------- Contact pin: appears once the hero scrolls away ---------- */
+
+  var heroEl = document.querySelector(".hero");
+  if (heroEl && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      document.documentElement.classList.toggle("past-hero", !entries[0].isIntersecting);
+    }, { rootMargin: "-64px 0px 0px 0px", threshold: 0 }).observe(heroEl);
+  } else {
+    document.documentElement.classList.add("past-hero");
+  }
+
   /* ---------- Video facades: iframe only on click ---------- */
 
   document.querySelectorAll(".facade").forEach(function (facade) {
