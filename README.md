@@ -1,12 +1,14 @@
-# anaghatodalbagi.com
+# anagha-todalbagi.github.io
 
-Anagha Todalbagi's personal site, hosted on GitHub Pages at [anaghatodalbagi.com](https://anaghatodalbagi.com/) (this repo is `anagha-todalbagi.github.io`, wired up via the `CNAME` file).
+Anagha Todalbagi's personal site, hosted on GitHub Pages at [anagha-todalbagi.github.io](https://anagha-todalbagi.github.io/).
 
 Plain HTML/CSS/JS, no build step, no dependencies, no framework. Edit the files, commit, push — Pages redeploys automatically.
 
 ## How this is hosted
 
 GitHub Pages serves this repo's default branch (`master`) directly from the root — whatever is in `master` is what's live. There is no build step: `.nojekyll` disables Jekyll processing since the site doesn't need it. To publish a change, merge it into `master` and push.
+
+There's no `CNAME` file, so the site serves from the default `*.github.io` URL. To point a custom domain at it later: add a `CNAME` file containing the domain, point the domain's DNS at GitHub Pages, and update the absolute URLs in `index.html` (see the note at the bottom of this file).
 
 ## Structure
 
@@ -17,7 +19,6 @@ main.js          hero canvas animation + click-to-play video embeds
 assets/          fonts, favicon, brand cards, company logos (see below)
 docs/            design docs — read these before changing content or style
 serve.py         local dev server: python3 serve.py -> http://127.0.0.1:4173
-CNAME            custom domain for GitHub Pages
 .nojekyll        tells GitHub Pages to skip Jekyll processing
 ```
 
@@ -68,4 +69,4 @@ Same for the banner, with `--window-size=1584,396` and `sips -z 396 1584`.
 - Exact employment months live in `<time>` `title` attributes and the JSON-LD, so the visible career ledger stays clean while remaining verifiable.
 - Video embeds load only on click (youtube-nocookie), so the page makes no YouTube requests until a visitor plays a talk.
 - The hero animation pauses off-screen and renders a static frame under `prefers-reduced-motion`. With JS disabled, all content is visible; only the animation is absent.
-- If the custom domain ever changes, update `CNAME` and every absolute URL in `index.html` (canonical link, `og:url`, `og:image`, `twitter:image`, JSON-LD `url`/`image`) — OG images must be absolute URLs.
+- If you add a custom domain, add a `CNAME` file and update every absolute URL in `index.html` (canonical link, `og:url`, `og:image`, `twitter:image`, JSON-LD `url`/`image`) to match — OG images must be absolute URLs.
