@@ -340,7 +340,8 @@ html.js:not(.flat) .reveal.in { opacity: 1; transform: none; }
   filter: grayscale(1) opacity(0.8);
   transition: filter 200ms ease-out;
 }
-img.org-logo:hover {
+.entry:hover .org-logo,
+.alum:hover .org-logo {
   filter: none;
 }
 .org-logo.sm { width: 24px; height: 24px; margin-top: 0; }
@@ -394,8 +395,8 @@ span.org-logo.fallback {
 
 .alumni {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px clamp(16px, 3vw, 32px);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 24px clamp(14px, 2vw, 28px);
   border-top: 1px solid var(--greige);
   padding-top: 24px;
   margin-top: 4px;
@@ -564,6 +565,7 @@ footer a:focus-visible { outline-color: var(--paper); }
   .stills { grid-template-columns: 1fr; }
   .row { grid-template-columns: 1fr; }
   .row-art { display: none; }
+  .alumni { grid-template-columns: repeat(2, 1fr); }
   .entry .meta { text-align: left; white-space: normal; }
   .entry-head { flex-wrap: wrap; }
   .entry-head .meta { flex-basis: 100%; margin-left: 42px; }
