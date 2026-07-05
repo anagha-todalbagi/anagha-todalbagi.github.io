@@ -30,7 +30,9 @@ Scale: H1 `clamp(3.25rem, 8.5vw, 6rem)` · lede `clamp(1.375rem, 2.6vw, 1.75rem)
 
 Every section opens with a guide-style header row: mono kicker left (`01 — HOW I WORK`, the number in mulberry), quiet right-aligned mono note, hairline underneath. The page is the flagship application of the same system as the brand guide — same furniture, same numbering.
 
-Components: hero lockup (monogram → kicker → name → lede → links → stat strip) · four-step loop (numbered: it is a sequence) · work ledger rows (kicker / serif title / one line / mono proof link) · career ledger (serif company, mono years + stage; exact months live in `title` attrs and JSON-LD) · alumni text row (no logos — the system is typographic) · grayscale click-to-play stills (the only imagery; color returns on play) · fact list · graphite footer with reversed monogram and colophon.
+Components: hero lockup (monogram → kicker → name → lede → links) · four-step loop (numbered: it is a sequence; each step opens with ink line-art) · work ledger rows (kicker / serif title / one line / mono proof link, with a line-art glyph right) · career ledger (grayscale org logo, serif company, mono years + stage; exact months live in `title` attrs and JSON-LD) · alumni row (small marks, serif-letter fallbacks on greige) · grayscale click-to-play stills · fact list · graphite footer with reversed monogram and colophon.
+
+Imagery rule: everything sits grayscale inside the monochrome system — org logos and video thumbnails return to color on hover (and stills on play). Line-art icons are single-weight ink strokes (2px, round caps), drawn in the same hand as the monogram.
 
 ## 4. Motion — one orchestrated moment
 

@@ -30,6 +30,7 @@ serve.py         local dev server: python3 serve.py -> http://127.0.0.1:4173
 - `brand/linkedin-banner.png` (1584×396) — upload directly to LinkedIn (name omitted on purpose; LinkedIn overlays the profile block on the left).
 - `brand/touch-icon.png` (180×180) — apple-touch-icon.
 - `brand/*.html` — editable sources for the three images above; see "Regenerating the brand cards" below.
+- `logos/` — company logos (Google's favicon service, 128px) used in the career ledger; they render grayscale and return to color on hover. Replace any file with a better official mark and it picks up the same treatment.
 
 ### `docs/`
 
@@ -71,4 +72,5 @@ Same for the banner (`--window-size=1584,396`, `sips -z 396 1584`) and the touch
 - Exact employment months live in `<time>` `title` attributes and the JSON-LD, so the visible career ledger stays clean while remaining verifiable.
 - Video embeds load only on click (youtube-nocookie), so the page makes no YouTube requests until a visitor plays a talk.
 - Motion is one load sequence (hero rises + the rule drawing in) plus single-fire scroll reveals; all of it is disabled under `prefers-reduced-motion` and `?flat`. With JS disabled, all content is visible.
+- The loop panels and work-row glyphs are inline SVG line art (2px ink strokes); edit them directly in `index.html`. Logos and video thumbnails sit grayscale and return to color on hover (stills also on play).
 - If you add a custom domain, add a `CNAME` file and update every absolute URL in `index.html` (canonical link, `og:url`, `og:image`, `twitter:image`, JSON-LD `url`/`image`) to match — OG images must be absolute URLs.

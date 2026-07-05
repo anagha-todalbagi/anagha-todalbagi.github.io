@@ -12,16 +12,16 @@ Single page, one column, five numbered sections plus hero and footer. No nav bar
 ## Sections
 
 ### Hero
-Monogram (A over T, rule draws in) · mono kicker · **Anagha Todalbagi** in Instrument Serif · lede: *"I turn first-principles thinking into systems that compound — AI-native products that scale, and teams that include."* · one evidence line (12 years, 5th hire → GA at Microsoft) · email + LinkedIn · stat strip from the guide's one-pager (0→1 · +40 · A–C).
+Monogram (A over T, rule draws in) · mono kicker · **Anagha Todalbagi** in Instrument Serif · lede: *"I turn product potential into traction and traction into scale."* · supporting paragraph (12 years, 5th hire → Microsoft, how she works) · email + LinkedIn.
 
 ### 01 — How I work `LISTEN · BALANCE · BUILD · SHIP`
-Four numbered steps (a real sequence — the product loop), each: serif verb, one line, one evidence example in fog.
+Four numbered steps (a real sequence — the product loop), each: ink line-art panel, serif verb, one line, one evidence example in fog.
 
 ### 02 — Featured work `SHIPPED, WITH PROOF`
-Ledger rows: mono kicker (org · years), serif title, one line, mono proof link ↗. Fabric Graph · GameChanger AutoPilot · Suki. A more-line carries Mirroring (preview → GA+), Real-Time Intelligence, Data API Builder.
+Ledger rows: mono kicker (org · years), serif title, one line, mono proof link ↗, line-art glyph right. Fabric Graph · GameChanger AutoPilot · Suki. A more-line carries Mirroring (preview → GA+), Real-Time Intelligence, Data API Builder.
 
 ### 03 — Career `SEED → BIG TECH`
-Reverse-chronological ledger: serif company + role, mono years + stage small caps (`SEED · 5TH ENGINEERING HIRE`). One detail line + stack. Exact months live in `time` `title` attributes and the JSON-LD so the visible ledger stays clean while remaining verifiable. Alumni text row: Cornell · IISc · Glydel · Comviva · B.E.
+Reverse-chronological ledger: grayscale org logo (color on hover), serif company + role, mono years + stage small caps (`SEED · 5TH ENGINEERING HIRE`). One detail line + stack. Exact months live in `time` `title` attributes and the JSON-LD so the visible ledger stays clean while remaining verifiable. Alumni row with small marks: Cornell · IISc · Glydel · Comviva · B.E.
 
 ### 04 — On stage `9 YEARS OF TALKS`
 Two grayscale stills, click-to-play (color returns on play): GopherCon 2018 · GopherCon 2019. Meta line: all 9 talks · Sessionize · VS Live! · LeadForward · Grace Hopper session chair. Fact list: TEDxBNMIT founder · Learn IT Girl + AnitaB.org mentor · Jagriti Yatra fellow (15,000+ applicants) · DIS 2018 paper.
